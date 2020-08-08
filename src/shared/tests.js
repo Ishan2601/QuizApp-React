@@ -12,8 +12,8 @@ export const TESTS =
         },
         {
         id: 1,
-        name:'ReactJS',
-        image: '/assets/images/reactjs.png',
+        name:'Git',
+        image: '/assets/images/git.jpg',
         category: 'appetizer',
         label:'',
         price:'1.99',
@@ -22,8 +22,8 @@ export const TESTS =
         },
         {
         id: 2,
-        name:'Git',
-        image: '/assets/images/git.png',
+        name:'Python',
+        image: '/assets/images/python.jpg',
         category: 'appetizer',
         label:'New',
         price:'1.99',
@@ -32,8 +32,8 @@ export const TESTS =
         },
         {
         id: 3,
-        name:'Python',
-        image: '/assets/images/python.jpg',
+        name:'ReactJS',
+        image: '/assets/images/reactjs.png',
         category: 'dessert',
         label:'',
         price:'2.99',
