@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Card, CardImg, CardText, CardBody, CardHeader,
     CardTitle, Breadcrumb, BreadcrumbItem, Form, FormGroup, Label, Input, Col, Button} from 'reactstrap';
 import { Link } from 'react-router-dom';
@@ -80,23 +80,90 @@ function RenderQuestions({test, questions}) {
                 );
         }
 
-    const ShowTest = (props) => {
+class ShowTest extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+  
+
+    handleSubmit(values) {
+        this.props.questions.map(question => {
+            const q = question.question
+            alert(values);
+        })                
+    }
+
+    render(){
         return (
             <div className="container">
                 <div className="row">
                     <Breadcrumb>
                         <BreadcrumbItem><Link to="/test">Tests</Link></BreadcrumbItem>
-                        <BreadcrumbItem active>{props.test.name}</BreadcrumbItem>
+                        <BreadcrumbItem active>{this.props.test.name}</BreadcrumbItem>
                     </Breadcrumb>
                     <div className="col-12">
-                        <h3>{props.test.name}</h3>
+                        <h3>{this.props.test.name}</h3>
                         <hr />
                     </div>                
                 </div>
                 <div className="row">
-                    <RenderQuestions test={props.test} questions = {props.questions}/>
+                    <div className = "col-12">
+                    <Form onSubmit={(values) => this.handleSubmit(values)}>
+                        {this.props.questions.map(question => {
+                            return(
+                                <Card className="m-2">
+                                    <FormGroup tag="fieldset">
+                                        <CardHeader>
+                                        <CardTitle>{question.question}</CardTitle>
+                                        </CardHeader>
+                                        <CardBody>
+                                        <FormGroup check>
+                                            <Label check>
+                                                <Input type="radio" id={question.options.A} name={question.question}
+                                                value={question.options.A}/>{' '}
+                                                {question.options.A}
+                                            </Label>
+                                        </FormGroup>
+                                        <FormGroup check>
+                                            <Label check>
+                                                <Input type="radio" id={question.options.B} name={question.question} 
+                                                value={question.options.B}/>{' '}
+                                                {question.options.B}
+                                            </Label>
+                                        </FormGroup>
+                                        <FormGroup check>
+                                            <Label check>
+                                                <Input type="radio" id={question.options.C} name={question.question} 
+                                                value={question.options.C}/>{' '}
+                                                {question.options.C}
+                                            </Label>
+                                        </FormGroup>
+                                        <FormGroup check>
+                                            <Label check>
+                                                <Input type="radio" id={question.options.D} name={question.question} 
+                                                value={question.options.D} />{' '}
+                                                {question.options.D}
+                                            </Label>
+                                        </FormGroup>
+                                        </CardBody>
+                                    </FormGroup>
+                                </Card>
+                            )})}
+                        <FormGroup row>
+                            <Col md={{size: 10}}>
+                                <Button type="submit" color="danger">
+                                    End Test!
+                                </Button>
+                            </Col>
+                        </FormGroup>
+                    </Form>
+                    </div>     
                 </div>
             </div>
         );
     }
+}
 export default ShowTest;

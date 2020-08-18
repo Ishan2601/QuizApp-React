@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Home from './HomeComponent';
 import Test from './TestComponent';
-import ShowTest from './ShowTestComponent';
+import Quiz from './QuizComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import { Switch, Route, Redirect} from 'react-router-dom'
 import { TESTS } from '../shared/tests';
-import { QUESTIONS } from '../shared/questions';
+import { QUESTIONS } from '../shared/q';
 
 class Main extends Component {
 
@@ -28,7 +28,7 @@ class Main extends Component {
 
     const TestWithId = ({match}) => {
       return(
-        <ShowTest test={this.state.tests.filter((test) => test.id === parseInt(match.params.testId,10))[0]}
+        <Quiz test={this.state.tests.filter((test) => test.id === parseInt(match.params.testId,10))[0]}
           questions={this.state.questions.filter((question) => question.testId === parseInt(match.params.testId,10))}
         />
       );
