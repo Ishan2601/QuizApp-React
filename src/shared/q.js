@@ -31,17 +31,19 @@ export const QUESTIONS =
         id: 3,
         testId: 0,
         difficulty: 4,
-        question: "Ultimate, Reaching for the stars!",
+        question: "Q5. What adds tracing capabilities to a Lambda?",
         image:'',
-        options:["","","",""]
+        options:["AWS Trace","CloudStack","CloudTrail","AWS X-Ray"],
+        answer: "AWS X-Ray"
     },
     {
         id: 4,
         testId: 0,
         difficulty: 2,
-        question: "It's your birthday, we're gonna party!",
+        question: "What can you use to monitor function invocations?",
         image:'',
-        options:["","","",""]
+        options:["API Gateway","S3","SAS","CloudTrail"],
+        answer : "CloudTrail"
     },
     {
         id: 5,
@@ -74,17 +76,19 @@ export const QUESTIONS =
         id: 8,
         testId: 1,
         difficulty: 4,
-        question: "Ultimate, Reaching for the stars!",
+        question: "How could you squash multiple commits together without using git merge --squash?",
         image:'',
-        options:[]
+        options:["Caching","You can't. git merge --squash is the only git command for that operation.","Rebasing","Reflogging"],
+        answer:"Rebasing"
     },
     {
         id: 9,
         testId: 1,
         difficulty: 2,
-        question: "It's your birthday, we're gonna party!",
+        question: "Where are files stored before they are committed to the local repository?",
         image:'',
-        options:[]
+        options:["Saved files","git documents","Staging area","git cache"],
+        answer: "Staging area"
     },
     {
         id: 10,
@@ -125,17 +129,18 @@ export const QUESTIONS =
         id: 13,
         testId: 2,
         difficulty: 4,
-        question: "Ultimate, Reaching for the stars!",
+        question: " What built-in list method would you use to remove items from a list?",
         image:'',
-        options:[]
+        options:['".delete()" method',"pop(my_list)",'del(my_list)','".pop()" method'],
+        answer: '".pop()" method'
     },
     {
         id: 14,
         testId: 2,
         difficulty: 2,
-        question: "It's your birthday, we're gonna party!",
+        question: "What is the correct syntax for defining a class called Game?",
         image:'',
-        options:[]
+        options:["class Game: pass","def Game(): pass","def Game: pass","class Game(): pass"],
     },
     {
         id: 15,
@@ -174,16 +179,18 @@ export const QUESTIONS =
         id: 18,
         testId: 3,
         difficulty: 4,
-        question: "Ultimate, Reaching for the stars!",
+        question: "How do you handle passing through the component tree without having to pass props down manually at every level?",
         image:'',
-        options:["","","",""]
+        options:["React Send","React Pinpoint","React Router","React Context"],
+        answer:"React Context"
     },
     {
         id: 19,
         testId: 3,
         difficulty: 2,
-        question: "It's your birthday, we're gonna party!",
+        question: "What can you use to handle code splitting?",
         image:'',
-        options:["","","",""]
+        options:["React.memo","React.split","React.lazy","React.fallback"],
+        answer: "React.lazy"
     }
 ]
